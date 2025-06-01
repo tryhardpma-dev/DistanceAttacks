@@ -13,8 +13,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> REMOTE_MISSILE_DEVICE =
             ITEMS.register("remote_missile_device", () -> new Item(new Item.Properties()
-
-
+                    .stacksTo(1)
             ));
 
     public static void register(IEventBus eventBus) {

@@ -1,7 +1,8 @@
 package com.pmadev.distanceattacks;
 
 import com.mojang.logging.LogUtils;
-import com.pmadev.distanceattacks.items.ModItems;
+import com.pmadev.distanceattacks.block.ModBlocks;
+import com.pmadev.distanceattacks.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -40,7 +41,7 @@ public class DistanceAttacks {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -56,6 +57,12 @@ public class DistanceAttacks {
     private void addCreative(BuildCreativeModeTabContentsEvent event){
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.REMOTE_MISSILE_DEVICE);
+            event.accept(ModBlocks.TEST_BLOCK);
+            event.accept(ModItems.TEST_ITEM);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.TEST_BLOCK);
         }
     }
 

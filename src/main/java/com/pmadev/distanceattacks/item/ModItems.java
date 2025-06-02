@@ -1,4 +1,4 @@
-package com.pmadev.distanceattacks.items;
+package com.pmadev.distanceattacks.item;
 
 import com.pmadev.distanceattacks.DistanceAttacks;
 import net.minecraft.world.item.Item;
@@ -15,6 +15,9 @@ public class ModItems {
             ITEMS.register("remote_missile_device", () -> new Item(new Item.Properties()
                     .stacksTo(1)
             ));
+
+    public static final RegistryObject<Item> TEST_ITEM =
+            ITEMS.register("test_item", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

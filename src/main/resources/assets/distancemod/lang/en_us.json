@@ -1,5 +1,6 @@
 {
   "item.distancemod.remote_missile_device": "Remote Missile Device",
   "item.distancemod.test_item": "Test Item",
-  "block.distancemod.test_block": "Test Block"
+  "block.distancemod.test_block": "Test Block",
+  "block.distancemod.test_block_full": "Test Block Full"
 }

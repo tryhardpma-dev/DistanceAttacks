@@ -59,10 +59,12 @@ public class DistanceAttacks {
             event.accept(ModItems.REMOTE_MISSILE_DEVICE);
             event.accept(ModBlocks.TEST_BLOCK);
             event.accept(ModItems.TEST_ITEM);
+            event.accept(ModBlocks.TEST_BLOCK_FULL);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.TEST_BLOCK);
+            event.accept(ModBlocks.TEST_BLOCK_FULL);
         }
     }
 

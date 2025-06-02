@@ -3,6 +3,7 @@ package com.pmadev.distanceattacks;
 import com.mojang.logging.LogUtils;
 import com.pmadev.distanceattacks.block.ModBlocks;
 import com.pmadev.distanceattacks.item.ModItems;
+import com.pmadev.distanceattacks.item.ModeCreativeModTabs;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,6 +43,7 @@ public class DistanceAttacks {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModeCreativeModTabs.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 

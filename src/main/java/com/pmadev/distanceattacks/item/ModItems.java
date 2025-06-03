@@ -16,9 +16,6 @@ public class ModItems {
                     .stacksTo(1)
             ));
 
-    public static final RegistryObject<Item> TEST_ITEM =
-            ITEMS.register("test_item", () -> new Item(new Item.Properties()));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

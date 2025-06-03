@@ -1,7 +1,6 @@
 package com.pmadev.distanceattacks.item;
 
 import com.pmadev.distanceattacks.DistanceAttacks;
-import com.pmadev.distanceattacks.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,19 +19,6 @@ public class ModeCreativeModTabs {
                             .title(Component.translatable("creativetab.distancemod.distance_attacks_items"))
                             .displayItems((itemDisplayParameters, output) -> {
                                 output.accept(ModItems.REMOTE_MISSILE_DEVICE.get());
-                                output.accept(ModItems.TEST_ITEM.get());
-                            })
-                            .build()
-            );
-
-    public static final RegistryObject<CreativeModeTab> DISTANCE_ATTACKS_BLOCKS_TAB =
-            CREATIVE_MODE_TAB.register("distance_attacks_blocks_tab",
-                    () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.TEST_BLOCK_FULL.get()))
-                            .withTabsBefore(DISTANCE_ATTACKS_ITEMS_TAB.getId())
-                            .title(Component.translatable("creativetab.distancemod.distance_attacks_blocks"))
-                            .displayItems((itemDisplayParameters, output) -> {
-                                output.accept(ModBlocks.TEST_BLOCK_FULL.get());
-                                output.accept(ModBlocks.TEST_BLOCK.get());
                             })
                             .build()
             );

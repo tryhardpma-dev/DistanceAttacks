@@ -1,7 +1,6 @@
 package com.pmadev.distanceattacks;
 
 import com.mojang.logging.LogUtils;
-import com.pmadev.distanceattacks.block.ModBlocks;
 import com.pmadev.distanceattacks.item.ModItems;
 import com.pmadev.distanceattacks.item.ModeCreativeModTabs;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,12 +36,10 @@ public class DistanceAttacks {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
         ModeCreativeModTabs.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -59,15 +56,8 @@ public class DistanceAttacks {
     private void addCreative(BuildCreativeModeTabContentsEvent event){
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.REMOTE_MISSILE_DEVICE);
-            event.accept(ModBlocks.TEST_BLOCK);
-            event.accept(ModItems.TEST_ITEM);
-            event.accept(ModBlocks.TEST_BLOCK_FULL);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.TEST_BLOCK);
-            event.accept(ModBlocks.TEST_BLOCK_FULL);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

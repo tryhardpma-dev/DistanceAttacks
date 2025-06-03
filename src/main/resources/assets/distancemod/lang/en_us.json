@@ -1,8 +1,4 @@
 {
   "item.distancemod.remote_missile_device": "Remote Missile Device",
-  "item.distancemod.test_item": "Test Item",
-  "block.distancemod.test_block": "Test Block",
-  "block.distancemod.test_block_full": "Test Block Full",
-  "creativetab.distancemod.distance_attacks_items": "Distance Attacks Items",
-  "creativetab.distancemod.distance_attacks_blocks": "Distance Attacks Blocks"
+  "creativetab.distancemod.distance_attacks_items": "Distance Attacks Items"
 }

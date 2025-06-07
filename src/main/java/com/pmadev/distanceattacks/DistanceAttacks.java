@@ -3,6 +3,7 @@ package com.pmadev.distanceattacks;
 import com.mojang.logging.LogUtils;
 import com.pmadev.distanceattacks.item.ModItems;
 import com.pmadev.distanceattacks.item.ModeCreativeModTabs;
+import com.pmadev.distanceattacks.network.ModNetworking;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +17,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.network.NetworkRegistry;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -27,11 +29,8 @@ public class DistanceAttacks {
     public static final Logger LOGGER = LogUtils.getLogger();
 
 
-
-
-
-    public DistanceAttacks() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public DistanceAttacks(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -45,11 +44,11 @@ public class DistanceAttacks {
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event){
-
+        event.enqueueWork(ModNetworking::register);
     }
 
     // Add the example block item to the building blocks tab

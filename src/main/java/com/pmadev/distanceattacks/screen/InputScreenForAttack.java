@@ -57,7 +57,7 @@ public class InputScreenForAttack extends Screen {
                 int y = Integer.parseInt(yField.getValue());
                 int z = Integer.parseInt(zField.getValue());
 
-                ModNetworking.CHANNEL.sendToServer(new PacketServerAttack(x, y, z));
+                ModNetworking.CHANNEL.sendToServer(new PacketServerAttack(x, y, z)); //conection to server with client
                 Minecraft.getInstance().player.sendSystemMessage(Component.literal("Your coordinates: " + x + ", " + y + ", " + z));
             } catch (NumberFormatException e) {
                 Minecraft.getInstance().player.sendSystemMessage(Component.literal("Invalid coordinates! Please enter numbers."));
